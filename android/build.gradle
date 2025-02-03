@@ -22,7 +22,7 @@ android {
 		}
 	}
 
-	signingConfigs = null
+	signingConfigs{ null}
 		
 	
 
