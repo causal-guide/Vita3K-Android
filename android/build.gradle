@@ -22,45 +22,16 @@ android {
 		}
 	}
 
-	signingConfigs = true
+	signingConfigs = null
 		
 	
 
 	buildTypes {
-		debug {
-			debuggable true
-			jniDebuggable true
-			applicationIdSuffix '.debug'
-		}
-
-		reldebug {
-			debuggable true
-			jniDebuggable true
-			externalNativeBuild {
-				cmake {
-					arguments "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-				}
-			}
-			minifyEnabled false
-			shrinkResources false
-			applicationIdSuffix '.debug'
-			signingConfig = signingConfigs.debug
-		}
-
-		release {
-			debuggable false
-			jniDebuggable false
-			externalNativeBuild {
-				cmake {
-					arguments "-DCMAKE_BUILD_TYPE=Release"
-				}
-			}
-			minifyEnabled true
-			shrinkResources true
-			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-			signingConfig = signingConfigs.ci
-		}
+         release {
+          signingConfig null
+          }
 	}
+	
 
 	sourceSets {
 		main {
