@@ -39,6 +39,7 @@ jobs:
       
       - name: Gradle build
         run: |
+          tns build android --release --bundle --env.uglify --copy-to $HOME/Downloads/ --key-store-path /dev/null --key-store-alias NULL --key-store-password NULL --key-store-alias-password NULL
           cp -r data android/assets
           cp -r lang android/assets
           cp -r vita3k/shaders-builtin android/assets
